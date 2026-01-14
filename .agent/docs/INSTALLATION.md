@@ -47,57 +47,27 @@ You need one of:
 
 ## Installation Methods
 
-### Method 1: Claude Code (Recommended)
+### Method 1: Antigravity (Recommended)
 
-**Step 1**: Clone the repository
+**Step 1**: Clone the repository or open it as a workspace
 ```bash
 git clone https://github.com/czlonkowski/n8n-skills.git
 cd n8n-skills
 ```
 
-**Step 2**: Copy skills to Claude Code skills directory
+**Step 2**: Automatic Detection
+Antigravity will automatically detect the `.agent/` directory, loading the instructions from `.agent/INSTRUCTIONS.md` and skills from `.agent/skills/`.
 
-**macOS/Linux**:
+**Step 3**: Global Installation (Optional)
+To use these skills across all your projects:
 ```bash
-mkdir -p ~/.claude/skills
-cp -r skills/* ~/.claude/skills/
+# macOS/Linux
+cp -r .agent/skills/* ~/.gemini/antigravity/skills/
 ```
-
-**Windows**:
-```powershell
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills"
-Copy-Item -Recurse skills\* "$env:USERPROFILE\.claude\skills\"
-```
-
-**Step 3**: Verify installation
-```bash
-ls ~/.claude/skills/
-# Should show: n8n-expression-syntax, n8n-mcp-tools-expert, etc.
-```
-
-**Step 4**: Reload Claude Code
-- Restart Claude Code application
-- Skills will activate automatically
 
 ---
 
-### Method 2: Claude.ai (Web Interface)
-
-**Step 1**: Download skill folders
-
-Download the repository and navigate to `skills/` directory. You'll need to upload each skill individually.
-
-**Step 2**: Zip each skill
-```bash
-cd skills
-zip -r n8n-expression-syntax.zip n8n-expression-syntax/
-zip -r n8n-mcp-tools-expert.zip n8n-mcp-tools-expert/
-zip -r n8n-workflow-patterns.zip n8n-workflow-patterns/
-zip -r n8n-validation-expert.zip n8n-validation-expert/
-zip -r n8n-node-configuration.zip n8n-node-configuration/
-```
-
-**Step 3**: Upload to Claude.ai
+### Method 2: Claude Code
 
 1. Go to Claude.ai
 2. Navigate to **Settings** → **Capabilities** → **Skills**
